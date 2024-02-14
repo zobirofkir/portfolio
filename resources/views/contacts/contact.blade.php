@@ -55,26 +55,32 @@
 </div>
 <div class="row block-9">
 <div class="col-md-8">
-<form action="{{url('/contact')}}#" class="p-4 p-md-5 contact-form">
+  @if (isset($name) && ($email))
+  <div style="background: green; padding: 15px; border-radius: 10px; margin: 10px; text-align: center; color: white; font-weight: 900;" role="alert">
+     Hello <strong>{{$name}}</strong> We Will Contact You Soon In This Email <strong>{{$email}}</strong>
+  </div>
+  @endif
+<form action="{{url('/contact')}}" method="POST" class="p-4 p-md-5 contact-form">
+  @csrf
 <div class="row">
 <div class="col-md-6">
 <div class="form-group">
-<input type="text" class="form-control" style="border-radius: 10px" placeholder="Your Name">
+<input type="text" class="form-control" name="name" style="border-radius: 10px" placeholder="Your Name">
 </div>
 </div>
 <div class="col-md-6">
 <div class="form-group">
-<input type="text" class="form-control" style="border-radius: 10px" placeholder="Your Email">
+<input type="text" class="form-control" name="email" style="border-radius: 10px" placeholder="Your Email">
 </div>
 </div>
 <div class="col-md-12">
 <div class="form-group">
-<input type="text" class="form-control" style="border-radius: 10px" placeholder="Subject">
+<input type="text" class="form-control" name="subject" style="border-radius: 10px" placeholder="Subject">
 </div>
 </div>
 <div class="col-md-12">
 <div class="form-group">
-<textarea name id cols="30" rows="7" style="border-radius: 10px" class="form-control" placeholder="Message"></textarea>
+<textarea id cols="30" rows="7" name="message" style="border-radius: 10px" class="form-control" placeholder="Message"></textarea>
 </div>
 </div>
 <div class="col-md-12">

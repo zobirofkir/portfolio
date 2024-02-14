@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\contactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,5 @@ Route::get('/work', function() {
 Route::get('/contact', function() {
     return view('contacts.contact');
 });
+
+Route::post('/contact', [contactController::class, 'store'])->name('contact');
