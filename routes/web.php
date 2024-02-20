@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\blogController;
 use App\Http\Controllers\contactController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +23,7 @@ Route::get('/about', function(){
     return view('abouts.about');
 });
 
-Route::get('/blog', function(){
-    return view('blogs.blog');
-});
+Route::get('/blog', [blogController::class, "blog"])->name("blog");
 
 Route::get('/single-blog', function(){
     return view('singlsBlogs.single');
@@ -40,3 +39,21 @@ Route::get('/contact', function() {
 });
 
 Route::post('/contact', [contactController::class, 'store'])->name('contact');
+
+Route::get('/blog/create', [blogController::class, 'index']);
+Route::post('/blog/create', [blogController::class, 'store'])->name('blog');
+
+Route::post('/blog/update/{title}', [blogController::class, "update"]);
+
+Route::get('/blog/update/{title}', [blogController::class, "edit"])->name('update');
+
+// Route::get('/blog/update', function(){
+//     return view('creats.update');
+// });
+
+
+Route::get('/blog/delete', function(){
+    return view('creats.delete');
+});
+
+Route::get('/blog/delete/{id}', [blogController::class, "destroy"])->name("delete");

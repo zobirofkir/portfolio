@@ -143,7 +143,7 @@
 <div class="col-md-6 ftco-animate">
 <span>Contact Me</span>
 <h2>ZOBIR OFKIR</h2>
-<p>If You Have Built Any Website Or Any App, You Can Just Contact Me .</p>
+<p>If You Have Build Any Website Or Any App, You Can Just Contact Me .</p>
 <p><a href="{{url('/contact')}}" class="btn btn-primary">Contact Me</a></p>
 </div>
 </div>

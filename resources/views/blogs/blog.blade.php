@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Avo - Free Bootstrap 4 Template by Colorlib</title>
+<title>csw</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/magnific-popup.css">
 <link rel="stylesheet" href="css/flaticon.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/modal.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -45,146 +46,47 @@
 </div>
 </div>
 </section>
+
 <section class="ftco-section">
-<div class="container">
-<div class="row d-flex">
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_1.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_2.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_3.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_4.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_5.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_6.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_7.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/blog')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_8.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/blog')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/blog')}}#">Admin</a></div>
-<div><a href="{{url('/blog')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="row mt-5 pb-5">
-<div class="col text-center">
-<div class="block-27">
-<ul>
-<li><a href="{{url('/blog')}}#">&lt;</a></li>
-<li class="active"><span>1</span></li>
-<li><a href="{{url('/blog')}}#">2</a></li>
-<li><a href="{{url('/blog')}}#">3</a></li>
-<li><a href="{{url('/blog')}}#">4</a></li>
-<li><a href="{{url('/blog')}}#">5</a></li>
-<li><a href="{{url('/blog')}}#">&gt;</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="row d-flex">
+      @if (isset($data))
+        @foreach ($data as $item)
+          <div class="col-md-3 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <div class="text">
+                <h3 class="heading mb-3"><a href="#blogModal{{$item->id}}">{{$item->title}}</a></h3>
+                <a href="#blogModal{{$item->id}}" class="block-20 img" style="background-image: url('{{$item->image_url}}');"></a>
+                <div class="meta mb-3">
+                  <div><a href="#blogModal{{$item->id}}">{{$item->date}}</a></div>
+                  <div><a href="#blogModal{{$item->id}}">{{$item->middle_title}}</a></div>
+                  <div><a href="#blogModal{{$item->id}}" class="meta-chat"><i class="fa-solid fa-star"></i> {{$item->stars}} </a></div>
+                </div> 
+                <p>{{substr($item->description, 0, 25) . '...'}}</p>
+              </div>
+            </div>
+          </div>  
+
+          <!-- Modal -->
+          <div id="blogModal{{$item->id}}" class="modal" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center;">
+            <div class="modal-content" style="max-width: 90%; max-height: 90%; overflow: auto; background-color: #fff; border-radius: 10px; padding: 20px;">
+                <div class="text-center">
+                    <h3 class="heading mb-3"><a href="">{{$item->title}}</a></h3>
+                    <a href="#" class="block-20 img" style="background-image: url('{{$item->image_url}}');"></a>
+                    <div class="meta mb-3">
+                        <div><a href="#">{{$item->date}}</a></div>
+                        <div><a href="#">{{$item->middle_title}}</a></div>
+                        <div><a href="#" class="meta-chat"><i class="fa-solid fa-star"></i> {{$item->stars}} </a></div>
+                    </div>
+                    <p>{{$item->description, 0, 25}}</p>
+                </div>
+                <a href="#" class="btn-close">Close</a>
+            </div>
+        </div>
+        @endforeach
+      @endif
+    </div>
+  </div>
 </section>
 
 <footer class="ftco-footer ftco-section">
