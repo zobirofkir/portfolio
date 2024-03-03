@@ -7,8 +7,14 @@
     <title>Blog Form</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://cdn.dribbble.com/users/4060136/screenshots/15314113/dribbel.gif">
+
 </head>
 <body class="bg-white" style="margin: 0; padding: 0;">
+    <div class="container text-center" style="padding: 30px">
+        <a href="{{route('project')}}" class="text-decoration-none text-black" style="font-weight: bold; text-transform: uppercase;"><h3>post project</h3></a>
+    </div>
     
     <div class="container mt-5" style="padding: 20px;">
         <div class="text-center">

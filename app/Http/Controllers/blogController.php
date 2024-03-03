@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Project;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,13 @@ class blogController extends Controller
     {
         $data = Blog::orderBy('created_at', 'desc')->get();
         return view('creats.create', compact('data'));
+    }
+
+    public function recent()
+    {
+        $data = Blog::orderBy('created_at', 'desc')->get();
+        $work = Project::orderBy('created_at', 'desc')->get();
+        return view('welcome', compact('data', 'work'));
     }
 
     public function blog()

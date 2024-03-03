@@ -7,12 +7,18 @@
     <title>Blog Form</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://cdn.dribbble.com/users/4060136/screenshots/15314113/dribbel.gif">
+
 </head>
 <body class="bg-white" style="margin: 0; padding: 0;">
+    <div class="container text-center" style="padding: 30px">
+        <a href="{{route('project')}}" class="text-decoration-none text-black" style="font-weight: bold; text-transform: uppercase;"><h3>post project</h3></a>
+    </div>
     
     <div class="container mt-5" style="padding: 20px;">
         <div class="text-center">
-            <img src="https://i.pinimg.com/originals/d3/46/4a/d3464a4351fdf340ccb6bb37c281381a.gif" style="width: 50%; border-radius: 30px; text-align: center;" >
+            <a href="{{url("/login")}}"><img src="https://i.pinimg.com/originals/d3/46/4a/d3464a4351fdf340ccb6bb37c281381a.gif" style="width: 50%; border-radius: 30px; text-align: center;" ></a>
         </div>
         <form action="{{url('/blog/create')}}" method="POST">
             @csrf
@@ -44,34 +50,36 @@
         </form>
     </div>
 
-    <div class="container d-flex justify-content-center align-items-center" style="text-align: center;">
-        <div class="card" style="width: 50%; justify-content: center; align-items:center; display:flex;">
-            @if (isset($data))
-            @foreach ($data as $item)
-            <img src="{{$item->image_url}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{$item->title}}</h5>
-                <p class="card-text">{{$item->description}}</p>
-            
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h4>{{$item->date}}</h4>
-                        <h5>{{$item->middle_title}}</h5>
-                        <h6>{{$item->stars}}</h6>
-                    </div>
-                    <div>
-                        <a href="{{ route('update', $item->id) }}" class="btn btn-warning">Update</a>
-                        <a href="{{route('delete', $item->id)}}" class="btn btn-danger">Delete</a>
-                    </div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+            <div class="col-md-8">
+                <div class="card text-center">
+                    @if (isset($data))
+                        @foreach ($data as $item)
+                            <img src="{{ $item->image_url }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->title }}</h5>
+                                <p class="card-text">{{ $item->description }}</p>
+                            
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4>{{ $item->date }}</h4>
+                                        <h5>{{ $item->middle_title }}</h5>
+                                        <h6>{{ $item->stars }}</h6>
+                                    </div>
+                                    <div>
+                                        <a href="{{ route('update', $item->id) }}" class="btn btn-warning">Update</a>
+                                        <a href="{{ route('delete', $item->id) }}" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
-            @endforeach                
-            @endif
         </div>
     </div>
-    <br>
-
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">

@@ -13,50 +13,72 @@
 </head>
 <body class="bg-white" style="margin: 0; padding: 0;">
     <div class="container text-center" style="padding: 30px">
-        <a href="{{route('project')}}" class="text-decoration-none text-black" style="font-weight: bold; text-transform: uppercase;"><h3>post project</h3></a>
+        <a href="{{url('/blog/create')}}" class="text-decoration-none text-black" style="font-weight: bold; text-transform: uppercase;"><h3>post blog</h3></a>
     </div>
     
     <div class="container mt-5" style="padding: 20px;">
         <div class="text-center">
-            <img src="https://i.pinimg.com/originals/d3/46/4a/d3464a4351fdf340ccb6bb37c281381a.gif" style="width: 50%; border-radius: 30px; text-align: center;" >
+            <a href="{{route("project")}}"><img src="https://i.gifer.com/CM9n.gif" style="width: 50%; border-radius: 30px; text-align: center;" ></a>
         </div>
-        
-        @if (isset($success))
-            <div class="alert alert-success" role="alert">
-                This Blog Has Been Created Success Fully
-            </div>
-        @endif
-        <form action="{{url('/blog/update/' . $data->id)}}" method="POST">
+        <form action="{{route('project')}}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" value="{{old('title', $data->title)}}" name="title" placeholder="Enter title">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
             </div>
             <div class="mb-3">
-                <label for="image_url" class="form-label">Image URL</label>
-                <input type="text" class="form-control" id="image_url" name="image_url" placeholder="Enter image URL" value="{{old('image_url', $data->image_url)}}">
+                <label for="short_title" class="form-label">short_title</label>
+                <input type="text" class="form-control" id="short_title" name="short_title" placeholder="short title">
             </div>
             <div class="mb-3">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="date" name="date" value="{{ old('date', $data->date) }}">
+                <label for="text" class="form-label">image</label>
+                <input type="text" class="form-control" id="image" name="image" placeholder="image"> 
             </div>
             <div class="mb-3">
-                <label for="middle_title" class="form-label">Middle Title</label>
-                <input type="text" class="form-control" id="middle_title" name="middle_title" value="{{old('middle_title', $data->middle_title)}}" placeholder="Enter middle title">
+                <label for="date" class="form-label">date</label>
+                <input type="date" class="form-control" id="date" name="date" placeholder="date">
             </div>
             <div class="mb-3">
-                <label for="stars" class="form-label">Stars</label>
-                <input type="number" class="form-control" id="stars" name="stars" value="{{old('stars', $data->stars)}}" placeholder="Enter stars">
+                <label for="text" class="form-label">url</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="url">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description">{{old('description', $data->description)}}</textarea>
+                <textarea class="form-control" id="description" name="description"  rows="3" placeholder="Enter description"></textarea>
             </div>
-            <button type="submit" class="btn" style="background-color: yellow">update</button>
-            <button type="submit" class="btn btn-danger"><a href="{{url('/blog/delete')}}" class="text-decoration-none text-white">delete</a></button>
-
+            <button type="submit" class="btn btn-primary">Send</button>
         </form>
     </div>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+            <div class="col-md-8">
+                <div class="card text-center">
+                    @if (isset($data))
+                        @foreach ($data as $item)
+                            <img src="{{ $item->image }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->title }}</h5>
+                                <p class="card-text">{{ $item->description }}</p>
+                            
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4>{{ $item->date }}</h4>
+                                        <h5>{{ $item->short_title }}</h5>
+                                        <h6>{{ $item->stars }}</h6>
+                                    </div>
+                                    <div>
+                                        <a href="{{ url('/project/update', $item->id) }}" class="btn btn-warning">Update</a>
+                                        <a href="{{ url('/project/delete', $item->id) }}" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div> 
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">

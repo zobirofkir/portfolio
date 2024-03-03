@@ -13,6 +13,20 @@
 <link rel="stylesheet" href="css/flaticon.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://cdn.dribbble.com/users/4060136/screenshots/15314113/dribbel.gif">
+<style>
+    /* Custom CSS for horizontal scrolling */
+    .overflow-auto {
+        display: flex;
+        flex-wrap: nowrap; /* Prevents items from wrapping */
+    }
+
+    .overflow-auto .col {
+        flex: 0 0 auto; /* Prevents columns from growing or shrinking */
+        width: 300px; /* Adjust as needed */
+    }
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -35,44 +49,40 @@
 
 <section class="hero-wrap degree-right js-fullheight">
 <div class="home-slider js-fullheight owl-carousel">
-<div class="slider-item js-fullheight" style="background-image:url(images/bg_1.jpg);">
+<div class="slider-item js-fullheight" style="background-image:url(https://i.pinimg.com/originals/81/17/8b/81178b47a8598f0c81c4799f2cdd4057.gif);">
 <div class="overlay"></div>
 <div class="container">
 <div class="row no-gutters slider-text js-fullheight align-items-center">
 <div class="col-md-12 ftco-animate">
 <div class="absolute">
 <h4 class="number" data-number="20">0</h4>
-<p>More than a hundred successful projects</p>
+<p class="text-white" style="color: white;">More than a hundred successful projects</p>
 </div>
 <div class="text">
-<h1 class="mb-4">zobir ofkir &amp; web developer</h1>
+<h1 class="mb-4">zobir &amp; ofkir</h1>
 <p>Hello, I'm Zobir Ofkir, a web and app developer.</p>
-<p class="mb-0"><a href="{{url('/')}}#" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Start Project</a></p>
+<p class="mb-0"><a href="{{url('/contact')}}#" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Contact Me</a></p>
 </div>
 </div>
-<a href="https://vimeo.com/45830194" class="img-video popup-vimeo d-flex align-items-center justify-content-center">
-<span class="fa fa-play"></span>
 </a>
 </div>
 </div>
 </div>
-<div class="slider-item js-fullheight" style="background-image:url(images/bg_2.jpg);">
+<div class="slider-item js-fullheight" style="background-image:url(https://user-images.githubusercontent.com/115187902/230700872-d5f44b85-56c7-4e27-80a4-6e2db901e60c.gif);">
 <div class="overlay"></div>
 <div class="container">
 <div class="row no-gutters slider-text js-fullheight align-items-center">
 <div class="col-md-12 ftco-animate">
 <div class="absolute">
 <h4 class="number" data-number="5">0</h4>
-<p>Years of Experienced</p>
+<p class="text-white" style="color: white;">Years of Experienced</p>
 </div>
 <div class="text">
 <h1 class="mb-4">zobir &amp; ofkir</h1>
 <p>I'm specialist in php and laravel , and i like fastapi for making an api , and react-native for app developement</p>
-<p class="mb-0"><a href="{{url('/')}}#" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Explore Projects</a></p>
+<p class="mb-0"><a href="{{url('/contact')}}#" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Contact Me</a></p>
 </div>
 </div>
-<a href="https://vimeo.com/45830194" class="img-video popup-vimeo d-flex align-items-center justify-content-center">
-<span class="fa fa-play"></span>
 </a>
 </div>
 </div>
@@ -117,7 +127,7 @@
 <div class="col-md-8">
 <div class="row">
 <div class="col-md-6 order-md-last ftco-animate d-flex">
-<div class="img w-100" style="background-image: url(images/about.jpg);"></div>
+<div class="img w-100" style="background-image: url(https://i.pinimg.com/originals/81/17/8b/81178b47a8598f0c81c4799f2cdd4057.gif);"></div>
 </div>
 <div class="col-md-6 ftco-animate">
 <div class="text text-md-right">
@@ -355,6 +365,39 @@
 </div>
 </div>
 </div>
+
+<div class="container" style="margin-top: 15%">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h2>Authors' Projects</h2>
+                </div>
+            </div>
+    
+            <div class="row row-cols-1 row-cols-md-3 overflow-auto" style="overflow-x: auto; white-space: nowrap;">
+                @foreach ($work as $item)
+                <div class="col d-flex ftco-animate">
+                    <div class="blog-entry justify-content-end">
+                        <a href="{{ url('/work') }}" class="block-20 img" style="background-image: url('{{ $item->image }}');"></a>
+                        <div class="text mt-3">
+                            <h3 class="heading mb-3"><a href="{{ url('/work') }}">{{ $item->title }}</a></h3>
+                            <h6 class="mb-3"><a href="{{ url('/work') }}">{{ $item->short_title }}</a></h6>
+                            <p class="card-text">{{ substr($item->description, 0, 100) . '...' }}</p>
+                            <div class="meta mb-3">
+                                <div><a href="{{ url('/work') }}">{{ $item->date }}</a></div>
+                                <div><a href="{{ url('/work') }}">{{ $item->middle_title }}</a></div>
+                                <a href="{{$item->url}}" target="__blanck" style="background-color: red; color: white; padding: 10px; border-radius: 5px;">Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>    
+</div>
+
 <div class="degree-left"></div>
 </section>
 <section class="ftco-section testimony-section">
@@ -378,78 +421,37 @@
 </div>
 </div>
 </section>
+
 <section class="ftco-section bg-light">
-<div class="container">
-<div class="row justify-content-center mb-5">
-<div class="col-md-7 heading-section text-center ftco-animate">
-<h2>Recent Blog</h2>
-</div>
-</div>
-<div class="row d-flex">
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_1.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/')}}#">Admin</a></div>
-<div><a href="{{url('/')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_2.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/')}}#">Admin</a></div>
-<div><a href="{{url('/')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_3.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/')}}#">Admin</a></div>
-<div><a href="{{url('/')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text">
-<h3 class="heading mb-3"><a href="{{url('/')}}#">Amplify your blockchain team</a></h3>
-<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_4.jpg');">
-</a>
-<div class="meta mb-3">
-<div><a href="{{url('/')}}#">June 01, 2020</a></div>
-<div><a href="{{url('/')}}#">Admin</a></div>
-<div><a href="{{url('/')}}#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-</div>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="degree-left-footer"></div>
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2>Recent Blog</h2>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 overflow-auto" style="overflow-x: auto; white-space: nowrap;">
+            @foreach ($data as $item)
+            <div class="col d-flex ftco-animate">
+                <div class="blog-entry justify-content-end">
+                    <a href="{{ url('/blog') }}" class="block-20 img" style="background-image: url('{{ $item->image_url }}');"></a>
+                    <div class="text mt-3">
+                        <h3 class="heading mb-3"><a href="{{ url('/blog') }}">{{ $item->title }}</a></h3>
+                        <p class="card-text">{{ substr($item->description, 0, 100) . '...' }}</p>
+                        <div class="meta mb-3">
+                            <div><a href="{{ url('/blog') }}">{{ $item->date }}</a></div>
+                            <div><a href="{{ url('/blog') }}">{{ $item->middle_title }}</a></div>
+                            <div><a href="{{ url('/blog') }}" class="meta-chat"><span class="fa fa-star"></span>{{ $item->stars }}</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="degree-left-footer"></div>
 </section>
+
 <footer class="ftco-footer ftco-section">
 <div class="container">
 <div class="row mb-5">
@@ -457,12 +459,12 @@
 <div class="ftco-footer-widget mb-4">
 <h2 class="ftco-heading-2">csw</h2>
 <p>Zobir Ofkir: Talented developer crafting elegant solutions with creativity, innovation, and a commitment to excellence.</p>
-<ul class="ftco-footer-social list-unstyled mt-5">
-<li class="ftco-animate"><a href="{{url('/')}}#"><i class="fa-brands fa-twitter"></i></a></li>
-<li class="ftco-animate"><a href="{{url('/')}}#"><i class="fa-brands fa-facebook"></i></a></li>
-<li class="ftco-animate"><a href="{{url('/')}}#"><i class="fa-brands fa-instagram"></i></a></li>
-<li class="ftco-animate"><a href="{{url('/')}}#"><i class="fa-brands fa-linkedin"></i></a></li>
-<li class="ftco-animate"><a href="{{url('/')}}#"><i class="fa-brands fa-github"></i></a></li>
+<ul class="mt-5 text-center" style="justify-content: center; align-items: center; display: flex;list-style: none;">
+<li class="ftco-animate" style="justify-content: center; align-items: center; display: flex;list-style: none; padding: 10px;"><a href="https://twitter.com/Zobir_Ofkir"><i class="fa-brands fa-twitter"></i></a></li>
+<li class="ftco-animate" style="justify-content: center; align-items: center; display: flex;list-style: none; padding: 10px;"><a href="https://web.facebook.com/zobir.ofkir.5/"><i class="fa-brands fa-facebook"></i></a></li>
+<li class="ftco-animate" style="justify-content: center; align-items: center; display: flex;list-style: none; padding: 10px;"><a href="https://www.instagram.com/csw_zo/"><i class="fa-brands fa-instagram"></i></a></li>
+<li class="ftco-animate" style="justify-content: center; align-items: center; display: flex;list-style: none; padding: 10px;"><a href="https://www.linkedin.com/in/zobir-ofkir-70b829296/?originalSubdomain=ma"><i class="fa-brands fa-linkedin"></i></a></li>
+<li class="ftco-animate" style="justify-content: center; align-items: center; display: flex;list-style: none; padding: 10px;"><a href="https://github.com/zobirofkir"><i class="fa-brands fa-github"></i></a></li>
 </ul>
 </div>
 </div>
@@ -494,12 +496,13 @@
 <div class="row">
 <div class="col-md-12 text-center">
 <p>
-Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved by <i class="fa fa-heart" aria-hidden="true"></i> by <a target="blanc" href="https://zobirofkir.com" target="_blank">Zobir</a>
+Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved by <i class="fa fa-heart" aria-hidden="true"></i> <a target="blanc" href="https://zobirofkir.com" target="_blank">Zobir</a>
 </p>
 </div>
 </div>
 </div>
 </footer>
+	
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 <script src="js/jquery.min.js"></script>

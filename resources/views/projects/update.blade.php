@@ -18,43 +18,40 @@
     
     <div class="container mt-5" style="padding: 20px;">
         <div class="text-center">
-            <img src="https://i.pinimg.com/originals/d3/46/4a/d3464a4351fdf340ccb6bb37c281381a.gif" style="width: 50%; border-radius: 30px; text-align: center;" >
+            <img src="https://i.gifer.com/CM9n.gif" style="width: 50%; border-radius: 30px; text-align: center;" >
         </div>
-        
         @if (isset($success))
             <div class="alert alert-success" role="alert">
                 This Blog Has Been Created Success Fully
             </div>
         @endif
-        <form action="{{url('/blog/update/' . $data->id)}}" method="POST">
+        <form action="{{url('/project/update/' . $data->id)}}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" value="{{old('title', $data->title)}}" name="title" placeholder="Enter title">
+                <input type="text" class="form-control" id="title" name="title"  value="{{old('title', $data->title)}}" placeholder="Enter title">
             </div>
             <div class="mb-3">
-                <label for="image_url" class="form-label">Image URL</label>
-                <input type="text" class="form-control" id="image_url" name="image_url" placeholder="Enter image URL" value="{{old('image_url', $data->image_url)}}">
+                <label for="short_title" class="form-label">short_title</label>
+                <input type="text" class="form-control" id="short_title" value="{{old('title', $data->short_title)}}" name="short_title" placeholder="short title">
             </div>
             <div class="mb-3">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="date" name="date" value="{{ old('date', $data->date) }}">
+                <label for="text" class="form-label">image</label>
+                <input type="text" class="form-control" id="image" value="{{old('title', $data->image)}}"  name="image" placeholder="image"> 
             </div>
             <div class="mb-3">
-                <label for="middle_title" class="form-label">Middle Title</label>
-                <input type="text" class="form-control" id="middle_title" name="middle_title" value="{{old('middle_title', $data->middle_title)}}" placeholder="Enter middle title">
+                <label for="date" class="form-label">date</label>
+                <input type="date" class="form-control" id="date" value="{{old('title', $data->date)}}"  name="date" placeholder="date">
             </div>
             <div class="mb-3">
-                <label for="stars" class="form-label">Stars</label>
-                <input type="number" class="form-control" id="stars" name="stars" value="{{old('stars', $data->stars)}}" placeholder="Enter stars">
+                <label for="text" class="form-label">url</label>
+                <input type="text" class="form-control" id="url" value="{{old('title', $data->url)}}"  name="url" placeholder="url">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description">{{old('description', $data->description)}}</textarea>
+                <input class="form-control" id="description" value="{{old('title', $data->description)}}"  name="description" rows="3" placeholder="Enter description"/>
             </div>
-            <button type="submit" class="btn" style="background-color: yellow">update</button>
-            <button type="submit" class="btn btn-danger"><a href="{{url('/blog/delete')}}" class="text-decoration-none text-white">delete</a></button>
-
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 
